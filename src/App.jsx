@@ -1,11 +1,16 @@
 import './App.css'
+import Home from './components/home'
+import Header from './components/header/header'
 
 function App() {
 
   return (
-    <div className="grid h-screen">
-            Space tourism website solution
-        </div>
+   <div className="">
+    <Header/>
+     <main>
+      <Home/>
+     </main>
+   </div>
   )
 }
 
