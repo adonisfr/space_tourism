@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import hamburger from '../../../assets/shared/icon-hamburger.svg';
-import close from '../../../assets/shared/icon-close.svg';
+import hamburger from '../../../../assets/shared/icon-hamburger.svg';
+import close from '../../../../assets/shared/icon-close.svg';
+import Menu from './menu';
 
 const Drawer = () => {
 	const [toggle, setToggle] = useState(false);
-
 	return (
 		<>
 			<div className="mt-1" onClick={() => setToggle(!toggle)}>
@@ -15,10 +15,8 @@ const Drawer = () => {
 					<div className="flex flex-row-reverse mt-4 p-4 " onClick={() => setToggle(!toggle)}>
 						<img src={close} />
 					</div>
-					<div className="flex flex-col">
-						<div>01</div>
-						<div>02</div>
-						<div>03</div>
+					<div>
+						<Menu horizontal={false} />
 					</div>
 				</div>
 			</div>
