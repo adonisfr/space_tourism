@@ -1,21 +1,30 @@
 import propTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const MenuItem = ({ href, children }) => {
+const MenuItem = ({ href, text, className, id }) => {
+	const active = useSelector((state) => state.menu.active);
+
 	return (
-		<Link to={href} className="text-white">
-			{children}
-		</Link>
+		<li className={`w-full ${active === id ? 'border-r-4 border-r-white' : ''}`}>
+			<Link to={href} className="text-white">
+				<div className={className}>{text}</div>
+			</Link>
+		</li>
 	);
 };
 
 MenuItem.propTypes = {
 	href: propTypes.string,
-	children: propTypes.oneOfType([propTypes.node, propTypes.string])
+	text: propTypes.oneOfType([propTypes.string, propTypes.node]),
+	className: propTypes.string,
+	id: propTypes.string.isRequired
 };
 
 MenuItem.defaultProps = {
-	href: '#'
+	href: '#',
+	text: '',
+	className: ''
 };
 
 export default MenuItem;

@@ -1,27 +1,46 @@
+import propTypes from 'prop-types';
 import { useState } from 'react';
 import hamburger from '../../../../assets/shared/icon-hamburger.svg';
 import close from '../../../../assets/shared/icon-close.svg';
-import Menu from './menu';
 
-const Drawer = () => {
+const Drawer = ({ children }) => {
 	const [toggle, setToggle] = useState(false);
 	return (
 		<>
-			<div className="mt-1" onClick={() => setToggle(!toggle)}>
-				<img src={hamburger} />
+			<div className="mt-2" onClick={() => setToggle(!toggle)}>
+				<img src={hamburger} className="cursor-pointer" />
 			</div>
-			<div className="absolute top-0 right-0 h-screen bg-white/5 backdrop-blur-3xl z-10">
-				<div className={toggle ? 'w-[254px]' : 'w-[0px]'}>
-					<div className="flex flex-row-reverse mt-4 p-4 " onClick={() => setToggle(!toggle)}>
-						<img src={close} />
+			<div
+				tabIndex="0"
+				className={`absolute flex w-full justify-end right-0 top-0 h-screen  bg-black/10 ${
+					toggle ? '' : 'hidden'
+				}`}
+				onClick={() => setToggle(!toggle)}
+			>
+				<div
+					tabIndex="1"
+					className="w-[254px]  h-screen bg-white"
+					style={{ background: 'rgba(255, 255, 255, 0.04)', backdropFilter: 'blur(81.5485px)' }}
+					onClick={(e) => {
+						e.stopPropagation();
+					}}
+				>
+					<div className="flex flex-row-reverse mt-8 p-4 " onClick={() => setToggle(!toggle)}>
+						<img src={close} className="cursor-pointer" />
 					</div>
-					<div>
-						<Menu horizontal={false} />
-					</div>
+					<div className="pt-4">{children}</div>
 				</div>
 			</div>
 		</>
 	);
+};
+
+Drawer.propTypes = {
+	children: propTypes.oneOfType([propTypes.string, propTypes.node])
+};
+
+Drawer.defaultProps = {
+	children: ''
 };
 
 export default Drawer;
