@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import Container from '../commun/container';
-import bgCrew from '../../assets/crew/background-crew-mobile.jpg';
 import DetailsCrew from './detailsCrew';
 import { getDataCrew } from './slices/crewSlices';
 import { useDispatch } from 'react-redux';
@@ -12,7 +11,10 @@ const Crew = () => {
 	}, []);
 
 	return (
-		<Container background={bgCrew} className="px-6">
+		<Container
+			classContainer="bg-[url('./assets/crew/background-crew-mobile.jpg')] md:bg-[url('./assets/crew/background-crew-tablet.jpg')]"
+			classBody="px-8 md:mt-20"
+		>
 			<DetailsCrew />
 		</Container>
 	);

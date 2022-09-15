@@ -1,5 +1,4 @@
 import Container from '../commun/container';
-import bgDestination from '../../assets/destination/background-destination-mobile.jpg';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getDataDestination } from './slices/destinationSlices';
@@ -13,7 +12,10 @@ const Destination = () => {
 	}, []);
 
 	return (
-		<Container background={bgDestination} className="px-6">
+		<Container
+			classContainer="bg-[url('./assets/destination/background-destination-mobile.jpg')] md:bg-[url('./assets/destination/background-destination-tablet.jpg')]"
+			classBody="px-8 md:mt-20"
+		>
 			<DetailsDestination />
 		</Container>
 	);

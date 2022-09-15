@@ -1,24 +1,24 @@
 import propTypes from 'prop-types';
-
-const Container = ({ background, className, children }) => {
+// style={{ backgroundImage: `url(${background})` }}
+const Container = ({ classContainer, classBody, children }) => {
 	return (
-		<div className={`bg-cover w-full h-screen`} style={{ backgroundImage: `url(${background})` }}>
+		<div className={`bg-cover w-full h-screen ${classContainer}`}>
 			<div className="pt-28">
-				<div className={className}>{children}</div>
+				<div className={classBody}>{children}</div>
 			</div>
 		</div>
 	);
 };
 
 Container.propTypes = {
-	background: propTypes.string,
-	className: propTypes.string,
+	classContainer: propTypes.string,
+	classBody: propTypes.string,
 	children: propTypes.oneOfType([propTypes.string, propTypes.node])
 };
 
 Container.defaultProps = {
-	background: '',
-	className: '',
+	classContainer: '',
+	classBody: '',
 	node: ''
 };
 

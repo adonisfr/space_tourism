@@ -1,5 +1,4 @@
 import Container from '../commun/container';
-import bgTecnology from '../../assets/technology/background-technology-mobile.jpg';
 import DetailsTecnology from './detailsTecnology';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -12,7 +11,10 @@ const Tecnology = () => {
 	}, []);
 
 	return (
-		<Container background={bgTecnology}>
+		<Container
+			classContainer="bg-[url('./assets/technology/background-technology-mobile.jpg')] md:bg-[url('./assets/technology/background-technology-tablet.jpg')]"
+			classBody="md:mt-20"
+		>
 			<DetailsTecnology />
 		</Container>
 	);

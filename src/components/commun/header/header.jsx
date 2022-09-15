@@ -27,17 +27,17 @@ const Header = () => {
 	}, [location]);
 
 	return (
-		<nav className="fixed flex justify-between p-3 w-full ">
-			<img src={logo} className="w-10" />
-			<div className="hidden lg:flex">
+		<nav className="fixed flex justify-between items-center pl-5 w-full h-16 md:h-24 pr-5 md:pr-0">
+			<img src={logo} className="w-8 md:w-12" />
+			<div className="hidden md:flex md:h-24">
 				<Menu>
 					<MenuItem href="/" text="HOME" id="home" />
-					<MenuItem href="/destinations" text="DESTINATION" id="destination" />
+					<MenuItem href="/destinations" text="DESTINATION" id="destinations" />
 					<MenuItem href="/crew" text="CREW" id="crew" />
 					<MenuItem href="/tecnology" text="TECHNOLOGY" id="tecnology" />
 				</Menu>
 			</div>
-			<div className="flex lg:hidden">
+			<div className="flex md:hidden">
 				<Drawer>
 					<Menu inline={false}>
 						<MenuItem

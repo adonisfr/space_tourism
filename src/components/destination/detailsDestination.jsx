@@ -25,29 +25,35 @@ const DetailsDestination = () => {
 	return (
 		<div className="flex flex-col">
 			<div className="flex flex-col  w-full space-y-5 pb-4">
-				<h1 className="text-white self-center">01 Pick your destination</h1>
-				<img src={currentImage} className="self-center" width={170} />
+				<h1 className="text-white self-center md:self-start">01 PICK YOUR DESTINATION</h1>
+				<img src={currentImage} className="self-center w-44 md:w-[300px]" />
 			</div>
 			<div className="flex justify-center  space-x-8 text-white">
 				{Object.keys(data).map((i) => {
 					return (
-						<div className="cursor-pointer" key={i} onClick={() => update(i)}>
+						<div className="cursor-pointer uppercase" key={i} onClick={() => update(i)}>
 							<p className={name === i ? 'underline ' : ''}>{i}</p>
 						</div>
 					);
 				})}
 			</div>
 			<div className="flex flex-col items-center space-y-5 mt-3 text-white">
-				<h1 className=" text-5xl font-light font-[Bellefair] ">{name}</h1>
-				<p className="font-[Barlow] text-xs text-center">{description}</p>
-				<hr className="w-full" />
-				<div className="flex flex-col items-center">
-					<h5 className="text-[15px] text-[#D0D6F9]">AVG. DISTANCE</h5>
-					<h5 className="text-[28px]">{distance}</h5>
+				<h1 className=" text-[56px] md:text-[80px] uppercase  font-light font-[Bellefair] ">
+					{name}
+				</h1>
+				<div className="md:w-[532px]">
+					<p className="font-[Barlow] text-base text-center">{description}</p>
 				</div>
-				<div className="flex flex-col items-center">
-					<h5 className="text-[15px] text-[#D0D6F9]">EST. TRAVEL TIME</h5>
-					<h5 className="text-[28px]">{travel}</h5>
+				<hr className="w-full" />
+				<div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 space-y-4 md:space-y-0 items-center">
+					<div className="flex flex-col items-center ">
+						<h5 className="font-[Barlow Condensed] text-[14px] text-[#D0D6F9]">AVG. DISTANCE</h5>
+						<h5 className="text-[28px]">{distance}</h5>
+					</div>
+					<div className="flex flex-col items-center">
+						<h5 className="font-[Barlow Condensed] text-[14px] text-[#D0D6F9]">EST. TRAVEL TIME</h5>
+						<h5 className="text-[28px]">{travel}</h5>
+					</div>
 				</div>
 			</div>
 		</div>

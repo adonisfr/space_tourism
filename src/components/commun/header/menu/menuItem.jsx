@@ -6,9 +6,15 @@ const MenuItem = ({ href, text, className, id }) => {
 	const active = useSelector((state) => state.menu.active);
 
 	return (
-		<li className={`w-full ${active === id ? 'border-r-4 border-r-white' : ''}`}>
+		<li
+			className={`w-full flex items-center ${
+				active === id
+					? 'h-full  border-r-4  md:border-y-4 md:border-x-0 md:border-t-transparent border-r-white md:border-b-white'
+					: ''
+			}`}
+		>
 			<Link to={href} className="text-white">
-				<div className={className}>{text}</div>
+				<div className={`w-[254px] md:w-auto ${className}`}>{text}</div>
 			</Link>
 		</li>
 	);

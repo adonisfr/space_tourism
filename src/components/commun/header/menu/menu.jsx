@@ -2,7 +2,15 @@ import propTypes from 'prop-types';
 
 const Menu = ({ inline, children }) => {
 	return (
-		<ul className={inline ? 'inline-flex' : 'font-[Barlow Condensed] space-y-5 '}>{children}</ul>
+		<ul
+			className={
+				inline
+					? 'inline-flex space-x-4 items-center px-10 bg-[#979797]/20'
+					: 'font-[Barlow Condensed] space-y-5 '
+			}
+		>
+			{children}
+		</ul>
 	);
 };
 
@@ -12,7 +20,7 @@ Menu.propTypes = {
 };
 
 Menu.defaultProps = {
-	horizontal: true
+	inline: true
 };
 
 export default Menu;
