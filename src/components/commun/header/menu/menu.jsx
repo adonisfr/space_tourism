@@ -5,7 +5,7 @@ const Menu = ({ inline, children }) => {
 		<ul
 			className={
 				inline
-					? 'inline-flex space-x-4 items-center px-10 bg-[#979797]/20'
+					? 'inline-flex space-x-4 lg:space-x-12 items-center px-10 '
 					: 'font-[Barlow Condensed] space-y-5 '
 			}
 		>
