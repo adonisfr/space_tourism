@@ -12,7 +12,8 @@ const Tecnology = () => {
 
 	return (
 		<Container
-			classContainer="bg-[url('./assets/technology/background-technology-mobile.jpg')] md:bg-[url('./assets/technology/background-technology-tablet.jpg')]"
+			classContainer="bg-[url('./assets/technology/background-technology-mobile.jpg')] md:bg-[url('./assets/technology/background-technology-tablet.jpg')]
+			md:bg-[url('./assets/technology/background-technology-desktop.jpg')]"
 			classBody="md:mt-20"
 		>
 			<DetailsTecnology />

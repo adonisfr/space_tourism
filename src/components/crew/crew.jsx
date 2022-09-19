@@ -12,7 +12,8 @@ const Crew = () => {
 
 	return (
 		<Container
-			classContainer="bg-[url('./assets/crew/background-crew-mobile.jpg')] md:bg-[url('./assets/crew/background-crew-tablet.jpg')]"
+			classContainer="bg-[url('./assets/crew/background-crew-mobile.jpg')] md:bg-[url('./assets/crew/background-crew-tablet.jpg')]
+			lg:bg-[url('./assets/crew/background-crew-desktop.jpg')]"
 			classBody="px-8 md:mt-20"
 		>
 			<DetailsCrew />

@@ -32,7 +32,7 @@ const Header = () => {
 			<div className="invisible lg:visible absolute my-auto left-36  w-[36%] ">
 				<hr className=" border-t-1 border-gray-500  " />
 			</div>
-			<div className="hidden md:flex md:h-24 bg-[#979797]/20 lg:w-3/5 lg:pl-28">
+			<div className="hidden md:flex md:h-24 bg-[#979797]/20 backdrop-blur-md lg:w-3/5 lg:pl-28">
 				<Menu>
 					<MenuItem href="/" text="HOME" id="home" />
 					<MenuItem href="/destinations" text="DESTINATION" id="destinations" />

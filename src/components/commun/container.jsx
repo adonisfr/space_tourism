@@ -2,9 +2,9 @@ import propTypes from 'prop-types';
 // style={{ backgroundImage: `url(${background})` }}
 const Container = ({ classContainer, classBody, children }) => {
 	return (
-		<div className={`bg-cover w-full h-screen ${classContainer}`}>
+		<div className={`bg-cover w-full min-h-screen  ${classContainer}`}>
 			<div className="pt-28">
-				<div className={classBody}>{children}</div>
+				<div className={`min-h-full ${classBody}`}>{children}</div>
 			</div>
 		</div>
 	);
