@@ -13,8 +13,8 @@ const DetailsTecnology = () => {
 
 	useEffect(() => {
 		if (images?.landscape) {
-			const imgLandscape = getImgUrl(`../.${images.landscape}`);
-			const imgPortrait = getImgUrl(`../.${images.portrait}`);
+			const imgLandscape = getImgUrl(images.landscape);
+			const imgPortrait = getImgUrl(images.portrait);
 			setCurrentImageLandscape(imgLandscape);
 			setCurrentImagePortrait(imgPortrait);
 		}

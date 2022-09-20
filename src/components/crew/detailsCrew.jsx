@@ -12,7 +12,7 @@ const DetailsCrew = () => {
 
 	useEffect(() => {
 		if (images?.webp) {
-			const imgUrl = getImgUrl(`../.${images.webp}`);
+			const imgUrl = getImgUrl(images.webp);
 			setCurrentImage(imgUrl);
 		}
 	}, [images?.webp, setCurrentImage]);
