@@ -2,7 +2,7 @@ import propTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const MenuItem = ({ href, text, className, id }) => {
+const MenuItem = ({ href, text, className, id, onClick }) => {
 	const active = useSelector((state) => state.menu.active);
 
 	return (
@@ -13,7 +13,7 @@ const MenuItem = ({ href, text, className, id }) => {
 					: ''
 			}`}
 		>
-			<Link to={href} className="text-white">
+			<Link to={href} className="text-white" onClick={onClick}>
 				<div className={`w-[254px] md:w-auto ${className}`}>{text}</div>
 			</Link>
 		</li>
@@ -24,13 +24,15 @@ MenuItem.propTypes = {
 	href: propTypes.string,
 	text: propTypes.oneOfType([propTypes.string, propTypes.node]),
 	className: propTypes.string,
-	id: propTypes.string.isRequired
+	id: propTypes.string.isRequired,
+	onClick: propTypes.func
 };
 
 MenuItem.defaultProps = {
 	href: '#',
 	text: '',
-	className: ''
+	className: '',
+	onClick: null
 };
 
 export default MenuItem;

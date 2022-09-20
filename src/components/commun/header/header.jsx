@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setMenuActive } from './menu/slices/menuSlice';
+import { setOpenDrawer } from './menu/slices/drawerSlice';
 
 const CustomText = ({ number, text }) => {
 	return (
@@ -27,6 +28,10 @@ const Header = () => {
 		const key = tmp !== '' ? tmp : 'home';
 		dispatch(setMenuActive(key));
 	}, [location]);
+
+	const onClickItemMenu = (state) => {
+		dispatch(setOpenDrawer(state));
+	};
 
 	return (
 		<nav className="fixed flex justify-between items-center pl-5 w-full h-16 md:h-24 pr-5 md:pr-0 lg:h-24 lg:pl-10 lg:top-10">
@@ -58,24 +63,28 @@ const Header = () => {
 							text={<CustomText number="00" text="HOME" />}
 							id="home"
 							className="pl-8"
+							onClick={() => onClickItemMenu(false)}
 						/>
 						<MenuItem
 							href="/destinations"
 							text={<CustomText number="01" text="DESTINATION" />}
 							id="destinations"
 							className="pl-8"
+							onClick={() => onClickItemMenu(false)}
 						/>
 						<MenuItem
 							href="/crew"
 							text={<CustomText number="02" text="CREW" />}
 							id="crew"
 							className="pl-8"
+							onClick={() => onClickItemMenu(false)}
 						/>
 						<MenuItem
 							href="/tecnology"
 							text={<CustomText number="03" text="TECHNOLOGY" />}
 							id="tecnology"
 							className="pl-8"
+							onClick={() => onClickItemMenu(false)}
 						/>
 					</Menu>
 				</Drawer>

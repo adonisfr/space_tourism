@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getImgUrl } from '../commun/utils';
 import { updateCurrentMember } from './slices/crewSlices';
 
 const DetailsCrew = () => {
@@ -10,12 +11,11 @@ const DetailsCrew = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		if (images?.png) {
-			import(`../.${images.png}`).then((img) => {
-				setCurrentImage(img.default);
-			});
+		if (images?.webp) {
+			const imgUrl = getImgUrl(`../.${images.webp}`);
+			setCurrentImage(imgUrl);
 		}
-	}, [images?.png, setCurrentImage]);
+	}, [images?.webp, setCurrentImage]);
 
 	const update = (selected) => {
 		const currentSelected = crewData[selected];

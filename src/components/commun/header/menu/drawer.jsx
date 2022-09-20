@@ -1,21 +1,27 @@
 import propTypes from 'prop-types';
-import { useState } from 'react';
 import hamburger from '../../../../assets/shared/icon-hamburger.svg';
 import close from '../../../../assets/shared/icon-close.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { setOpenDrawer } from './slices/drawerSlice';
 
 const Drawer = ({ children }) => {
-	const [toggle, setToggle] = useState(false);
+	const open = useSelector((state) => state.drawer.open);
+	const dispatch = useDispatch();
+
+	const toggle = (state) => {
+		dispatch(setOpenDrawer(state));
+	};
 	return (
 		<>
-			<div className="mt-2" onClick={() => setToggle(!toggle)}>
+			<div className="mt-2" onClick={() => toggle(!open)}>
 				<img src={hamburger} className="cursor-pointer" />
 			</div>
 			<div
 				tabIndex="0"
 				className={`absolute flex w-full justify-end right-0 top-0 h-screen  bg-black/10 ${
-					toggle ? '' : 'hidden'
+					open ? '' : 'hidden'
 				}`}
-				onClick={() => setToggle(!toggle)}
+				onClick={() => toggle(!open)}
 			>
 				<div
 					tabIndex="1"
@@ -25,7 +31,7 @@ const Drawer = ({ children }) => {
 						e.stopPropagation();
 					}}
 				>
-					<div className="flex flex-row-reverse mt-8 p-4 " onClick={() => setToggle(!toggle)}>
+					<div className="flex flex-row-reverse mt-8 p-4 " onClick={() => toggle(!open)}>
 						<img src={close} className="cursor-pointer" />
 					</div>
 					<div className="pt-4">{children}</div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getImgUrl } from '../commun/utils';
 import { updateCurrentTecnology } from './slices/tecnologySlices';
 
 const DetailsTecnology = () => {
@@ -12,13 +13,10 @@ const DetailsTecnology = () => {
 
 	useEffect(() => {
 		if (images?.landscape) {
-			import(/* @vite-ignore */ `../.${images.landscape}`).then((img) => {
-				console.log(img.default);
-				setCurrentImageLandscape(img.default);
-			});
-			import(/* @vite-ignore */ `../.${images.portrait}`).then((img) => {
-				setCurrentImagePortrait(img.default);
-			});
+			const imgLandscape = getImgUrl(`../.${images.landscape}`);
+			const imgPortrait = getImgUrl(`../.${images.portrait}`);
+			setCurrentImageLandscape(imgLandscape);
+			setCurrentImagePortrait(imgPortrait);
 		}
 	}, [images?.landscape, setCurrentImageLandscape, setCurrentImagePortrait]);
 

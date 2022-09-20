@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { getImgUrl } from '../commun/utils';
 import { updateCurrentDestination } from './slices/destinationSlices';
 
 const DetailsDestination = () => {
@@ -10,12 +11,11 @@ const DetailsDestination = () => {
 	const { name, distance, description, travel, images } = destination;
 
 	useEffect(() => {
-		if (images?.png) {
-			import(`../.${images.png}`).then((resp) => {
-				setCurrentImage(resp.default);
-			});
+		if (images?.webp) {
+			const imgUrl = getImgUrl(`../.${images.webp}`);
+			setCurrentImage(imgUrl);
 		}
-	}, [images?.png]);
+	}, [images?.webp, setCurrentImage]);
 
 	const update = (selected) => {
 		const current = data[selected];

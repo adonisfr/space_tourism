@@ -3,13 +3,15 @@ import destinationReducer from './components/destination/slices/destinationSlice
 import crewReducer from './components/crew/slices/crewSlices';
 import tecnologyReducer from './components/tecnology/slices/tecnologySlices';
 import menuReducer from './components/commun/header/menu/slices/menuSlice';
+import drwawerReducer from './components/commun/header/menu/slices/drawerSlice';
 
 const store = configureStore({
 	reducer: {
 		destination: destinationReducer,
 		crew: crewReducer,
 		tecnology: tecnologyReducer,
-		menu: menuReducer
+		menu: menuReducer,
+		drawer: drwawerReducer
 	}
 });
 
