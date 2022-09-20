@@ -26,7 +26,7 @@ const DetailsCrew = () => {
 		<div className="flex flex-col flex-grow lg:flex-row lg:min-h-[86vh]">
 			<div className="flex flex-col items-center w-full lg:w-3/5 lg:pt-14 lg:pl-12">
 				<div className="flex flex-col space-y-5  w-full lg:w-[635px]   ">
-					<h1 className="font-[Barlow Condensed] text-base md:text-xl lg:text-[28px] text-white self-center md:self-start">
+					<h1 className="font-barlowCondensed tracking-[4.725px] text-base md:text-xl lg:text-[28px] text-white self-center md:self-start">
 						02 MEET YOUR CREW
 					</h1>
 					<div className="flex justify-center md:hidden">
@@ -47,15 +47,15 @@ const DetailsCrew = () => {
 				</div>
 				<div className="flex flex-col items-center  lg:w-[635px]  lg:h-96 lg:items-start lg:pt-14 space-y-5 mt-5 text-white">
 					<div className="flex flex-col items-center lg:items-start">
-						<h5 className="font-[Bellefair] text-[16px] md:text-[24px] lg:text-[32px] text-[#D0D6F9] uppercase">
+						<h5 className="font-bellefair text-[16px] md:text-[24px] lg:text-[32px] text-[#D0D6F9] uppercase">
 							{role}
 						</h5>
-						<h5 className="font-[Bellefair] text-[24px] md:text-[40px] lg:text-[56px] uppercase">
+						<h5 className="font-bellefair text-[24px] md:text-[40px] lg:text-[56px] uppercase">
 							{name}
 						</h5>
 					</div>
 					<div className="md:w-[560px] lg:w-[544px] ">
-						<p className="font-[Barlow] text-[15px] md:text-[16px] lg:text-lg text-center lg:text-start">
+						<p className="font-barlow text-[15px] md:text-[16px] lg:text-lg text-center lg:text-start">
 							{bio}
 						</p>
 					</div>

@@ -7,7 +7,7 @@ const MenuItem = ({ href, text, className, id }) => {
 
 	return (
 		<li
-			className={`w-full flex items-center ${
+			className={`w-full flex items-center font-barlowCondensed  tracking-[2.7px] ${
 				active === id
 					? 'h-full  border-r-4  md:border-y-4 md:border-x-0 md:border-t-transparent border-r-white md:border-b-white'
 					: ''

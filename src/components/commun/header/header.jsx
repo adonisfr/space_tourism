@@ -10,7 +10,9 @@ import { setMenuActive } from './menu/slices/menuSlice';
 const CustomText = ({ number, text }) => {
 	return (
 		<>
-			<span className="mx-2 font-bold">{number}</span>
+			<span className="mx-2 font-barlowCondensed text-base tracking-[2.7px] font-bold md:hidden lg:inline">
+				{number}
+			</span>
 			<span>{text}</span>
 		</>
 	);
@@ -29,16 +31,24 @@ const Header = () => {
 	return (
 		<nav className="fixed flex justify-between items-center pl-5 w-full h-16 md:h-24 pr-5 md:pr-0 lg:h-24 lg:pl-10 lg:top-10">
 			<img src={logo} className="w-8 md:w-12" />
-			<div className="invisible lg:visible absolute my-auto left-36  w-[36%] ">
-				<hr className=" border-t-1 border-gray-500  " />
-			</div>
-			<div className="hidden md:flex md:h-24 bg-[#979797]/20 backdrop-blur-md lg:w-3/5 lg:pl-28">
+			<div className="hidden md:flex md:h-24 bg-[#979797]/20 backdrop-blur lg:w-[60%] xl:w-[55%] xl:pl-16">
 				<Menu>
-					<MenuItem href="/" text="HOME" id="home" />
-					<MenuItem href="/destinations" text="DESTINATION" id="destinations" />
-					<MenuItem href="/crew" text="CREW" id="crew" />
-					<MenuItem href="/tecnology" text="TECHNOLOGY" id="tecnology" />
+					<MenuItem href="/" text={<CustomText number="00" text="HOME" />} id="home" />
+					<MenuItem
+						href="/destinations"
+						text={<CustomText number="01" text="DESTINATION" />}
+						id="destinations"
+					/>
+					<MenuItem href="/crew" text={<CustomText number="02" text="CREW" />} id="crew" />
+					<MenuItem
+						href="/tecnology"
+						text={<CustomText number="03" text="TECHNOLOGY" />}
+						id="tecnology"
+					/>
 				</Menu>
+			</div>
+			<div className="invisible lg:visible absolute my-auto left-36  lg:w-[30%] xl:w-[40%]">
+				<hr className=" border-t-1 border-gray-500 " />
 			</div>
 			<div className="flex md:hidden">
 				<Drawer>

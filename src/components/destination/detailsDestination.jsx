@@ -26,7 +26,7 @@ const DetailsDestination = () => {
 		<div className="flex flex-col lg:flex-row">
 			<div className="flex flex-col items-center   w-full pb-4 ">
 				<div className="flex flex-col lg:w-[540px]  space-y-16 ">
-					<h1 className="text-white self-center md:self-start text-base md:text-xl lg:text-[28px] ">
+					<h1 className="font-barlowCondensed font-normal tracking-[2.7px] uppercase text-white self-center md:self-start text-base md:text-xl lg:text-[28px] ">
 						01 PICK YOUR DESTINATION
 					</h1>
 					{currentImage && (
@@ -41,34 +41,40 @@ const DetailsDestination = () => {
 				<div className="flex justify-center lg:justify-start  space-x-8 text-white ">
 					{Object.keys(data).map((i) => {
 						return (
-							<div className="cursor-pointer uppercase" key={i} onClick={() => update(i)}>
-								<p className={name === i ? 'underline ' : ''}>{i}</p>
+							<div
+								className="cursor-pointer uppercase font-barlowCondensed "
+								key={i}
+								onClick={() => update(i)}
+							>
+								<p className={name === i ? 'underline underline-offset-8 decoration-white' : ''}>
+									{i}
+								</p>
 							</div>
 						);
 					})}
 				</div>
 				<div className="flex flex-col items-center lg:items-start space-y-5 mt-3 text-white ">
-					<h1 className=" text-[56px] md:text-[80px] uppercase  font-light font-[Bellefair] ">
+					<h1 className=" text-[56px] md:text-[80px] uppercase  font-normal font-bellefair ">
 						{name}
 					</h1>
 					<div className="md:w-[532px] lg:w-[444px]">
-						<p className="font-[Barlow] text-base text-center lg:text-start lg:text-lg">
+						<p className="font-barlow text-base text-center lg:text-start lg:text-lg">
 							{description}
 						</p>
 					</div>
 					<hr className="w-full lg:w-[444px] border-t-1  border-t-gray-500" />
 					<div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 space-y-4 lg:space-x-12 uppercase md:space-y-0 items-center ">
 						<div className="flex flex-col items-center">
-							<h5 className="font-[Barlow Condensed] text-[14px] text-[#D0D6F9] lg:self-start">
+							<h5 className="font-barlowCondensed text-[14px] text-[#D0D6F9] lg:self-start">
 								AVG. DISTANCE
 							</h5>
-							<h5 className="text-[28px] lg:self-start">{distance}</h5>
+							<h5 className="font-bellefair text-[28px] lg:self-start">{distance}</h5>
 						</div>
 						<div className="flex flex-col items-center ">
-							<h5 className="font-[Barlow Condensed] text-[14px] text-[#D0D6F9] lg:self-start">
+							<h5 className="font-barlowCondensed text-[14px] text-[#D0D6F9] lg:self-start">
 								EST. TRAVEL TIME
 							</h5>
-							<h5 className="text-[28px] lg:self-start">{travel}</h5>
+							<h5 className="font-bellefair text-[28px] lg:self-start">{travel}</h5>
 						</div>
 					</div>
 				</div>

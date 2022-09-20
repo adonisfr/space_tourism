@@ -30,7 +30,7 @@ const DetailsTecnology = () => {
 	return (
 		<>
 			<div className="hidden lg:flex w-96 justify-center ">
-				<h1 className="font-[Barlow Condensed] text-[28px] text-white self-center md:self-start md:mb-5 md:ml-8 lg:self-center">
+				<h1 className="font-barlowCondensed tracking-[4.725px] text-[28px] text-white self-center md:self-start md:mb-5 md:ml-8 lg:self-center">
 					03 SPACE LAUNCH 101
 				</h1>
 			</div>
@@ -66,14 +66,14 @@ const DetailsTecnology = () => {
 				</div>
 				<div className="flex flex-col lg:flex-grow items-center lg:items-start space-y-5 mt-5 lg:pt-11 text-white px-6 lg:px-0 lg:min-w-[400px]">
 					<div className="flex flex-col items-center lg:items-start">
-						<h5 className="text-[15px] md:text-[16px] text-[#D0D6F9] uppercase">
+						<h5 className="font-barlowCondensed tracking-[2.7px] font-normal text-[15px] md:text-[16px] text-[#D0D6F9] uppercase">
 							THE TERMINOLOGY...
 						</h5>
-						<h5 className="font-[Bellefair] text-[28px] md:text-[40px] lg:text-[56px] uppercase">
+						<h5 className="font-bellefair text-[28px] md:text-[40px] lg:text-[56px] uppercase">
 							{name}
 						</h5>
 					</div>
-					<p className="font-[Barlow] text-base text-center lg:text-lg lg:text-start max-w-[458px]">
+					<p className="font-barlow text-base text-center lg:text-lg lg:text-start max-w-[458px]">
 						{description}
 					</p>
 				</div>
