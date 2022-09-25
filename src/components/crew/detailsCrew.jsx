@@ -30,7 +30,7 @@ const DetailsCrew = () => {
 						02 MEET YOUR CREW
 					</h1>
 					<div className="flex justify-center md:hidden">
-						<img src={currectImage} className="w-50 h-[223px]" />
+						<img src={currectImage} className="w-50 h-[223px]" alt="image" />
 					</div>
 				</div>
 				<hr className="w-full border-t-1 border-gray-500  mb-2 md:hidden" />
@@ -77,6 +77,7 @@ const DetailsCrew = () => {
 					src={currectImage}
 					className="md:max-h-[532px]  
 				md:min-h-[60vh] lg:min-h-full"
+					alt="image"
 				/>
 			</div>
 		</div>

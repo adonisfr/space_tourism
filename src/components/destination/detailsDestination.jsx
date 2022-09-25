@@ -33,6 +33,7 @@ const DetailsDestination = () => {
 						<img
 							src={currentImage}
 							className="self-center w-44 md:w-[300px] lg:h-[445px] lg:w-[445px]"
+							alt="image"
 						/>
 					)}
 				</div>

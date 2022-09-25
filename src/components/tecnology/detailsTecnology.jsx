@@ -39,7 +39,11 @@ const DetailsTecnology = () => {
 							03 SPACE LAUNCH 101
 						</h1>
 						<div className="flex justify-center ">
-							<img src={currectImageLandscape} className="w-full h-[170px] md:h-[310px]" />
+							<img
+								src={currectImageLandscape}
+								className="w-full h-[170px] md:h-[310px]"
+								alt="landscape"
+							/>
 						</div>
 					</div>
 					<div className="flex flex-row lg:flex-col justify-center items-center lg:w-48 gap-5 text-white mt-4 md:mt-8">
@@ -76,7 +80,7 @@ const DetailsTecnology = () => {
 					</p>
 				</div>
 				<div className="lg:flex justify-center hidden ">
-					<img src={currectImagePortrait} className="w-[515px] h-[527px]" />
+					<img src={currectImagePortrait} className="w-[515px] h-[527px]" alt="portrait" />
 				</div>
 			</div>
 		</>
